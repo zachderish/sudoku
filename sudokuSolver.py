@@ -1,13 +1,10 @@
-import sys
-sys.setrecursionlimit(5000)
 
 board = [[0, 2, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 6, 0, 0, 0, 0, 3], [0, 7, 4, 0, 8, 0, 0, 0, 0], 
 [0, 0, 0, 0, 0, 3, 0, 0, 2], [0, 8, 0, 0, 4, 0, 0, 1, 0], [6, 0, 0, 5, 0, 0, 0, 0, 0], 
 [0, 0, 0, 0, 1, 0, 7, 8, 0], [5, 0, 0, 0, 0, 9, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 4, 0]]
 
+#printing 2d array board
 def print_board(board):
-    #printing 2d array board
-    #print("Your board:")
     for r in board:
         for c in r:
            print(c, end = " ")
@@ -27,11 +24,6 @@ def currIndex(board, index):
         currRow += 1
 
 def solvable(board):
-    #board[4][8] = 8
-    #print_board(board)
-    #val = valid_col(board, 1)
-    #val = valid_box(board, 4, 8)
-    #print(val)
     index = [0, 0]
     if(not currIndex(board, index)):
         return True
@@ -116,8 +108,6 @@ def valid_box(board, rowNum, colNum, val):
     return True
 
 def check_location(board, row, col, val):
-    #board[row][col] = val
-    #print_board(board)
     bool1 = valid_col(board, col, val)
     bool2 = valid_row(board, row, val)
     bool3 = valid_box(board, row, col, val)
