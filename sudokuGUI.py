@@ -1,4 +1,3 @@
-
 from tkinter import *
 from sudokuSolver import check_location, solvable, print_board
 
@@ -216,3 +215,4 @@ myButton = Button(root, text="Enter Your Name", padx=50, pady=50, command=myClic
 myButton.pack()
 
 root.mainloop()
+
