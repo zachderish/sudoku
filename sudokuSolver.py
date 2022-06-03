@@ -1,10 +1,21 @@
+import sys
+sys.setrecursionlimit(5000)
 
-board = [[0, 2, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 6, 0, 0, 0, 0, 3], [0, 7, 4, 0, 8, 0, 0, 0, 0], 
+board5 = [[0, 2, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 6, 0, 0, 0, 0, 3], [0, 7, 4, 0, 8, 0, 0, 0, 0], 
 [0, 0, 0, 0, 0, 3, 0, 0, 2], [0, 8, 0, 0, 4, 0, 0, 1, 0], [6, 0, 0, 5, 0, 0, 0, 0, 0], 
 [0, 0, 0, 0, 1, 0, 7, 8, 0], [5, 0, 0, 0, 0, 9, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 4, 0]]
 
-#printing 2d array board
+board3 = [[0, 2, 0, 6, 0, 8, 0, 0, 0], [5, 8, 0, 0, 0, 9, 7, 0, 0], [0, 0, 0, 0, 4, 0, 0, 0, 0], 
+[3, 7, 0, 0, 0, 0, 5, 0, 0], [6, 0, 0, 0, 0, 0, 0, 0, 4], [0, 0, 8, 0, 0, 0, 0, 1, 3], 
+[0, 0, 0, 0, 2, 0, 0, 0, 0], [0, 0, 9, 8, 0, 0, 0, 3, 6], [0, 0, 0, 3, 0, 6, 0, 9, 0]]
+
+board1 = [[0, 0, 0, 2, 6, 0, 7, 0, 1], [6, 8, 0, 0, 7, 0, 0, 9, 0], [1, 9, 0, 0, 0, 4, 5, 0, 0], 
+[8, 2, 0, 1, 0, 0, 0, 4, 0], [0, 0, 4, 6, 0, 2, 9, 0, 0], [0, 5, 0, 0, 0, 3, 0, 2, 8], 
+[0, 0, 9, 3, 0, 0, 0, 7, 4], [0, 4, 0, 0, 5, 0, 0, 3, 6], [7, 0, 3, 0, 1, 8, 0, 0, 0]]
+
 def print_board(board):
+    #printing 2d array board
+    #print("Your board:")
     for r in board:
         for c in r:
            print(c, end = " ")
@@ -24,6 +35,11 @@ def currIndex(board, index):
         currRow += 1
 
 def solvable(board):
+    #board[4][8] = 8
+    #print_board(board)
+    #val = valid_col(board, 1)
+    #val = valid_box(board, 4, 8)
+    #print(val)
     index = [0, 0]
     if(not currIndex(board, index)):
         return True
@@ -108,6 +124,8 @@ def valid_box(board, rowNum, colNum, val):
     return True
 
 def check_location(board, row, col, val):
+    #board[row][col] = val
+    #print_board(board)
     bool1 = valid_col(board, col, val)
     bool2 = valid_row(board, row, val)
     bool3 = valid_box(board, row, col, val)
@@ -116,8 +134,8 @@ def check_location(board, row, col, val):
     return False
 
 print("Your board:")
-print_board(board)
-val = solvable(board)
+print_board(board3)
+val = solvable(board3)
 print(val)
 print("Solved board:")
-print_board(board)
+print_board(board3)
