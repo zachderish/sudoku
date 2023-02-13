@@ -1,6 +1,7 @@
 from tkinter import *
 from sudokuSolver import check_location, solvable, print_board
 
+# TEST
 root = Tk()
 root.title("Sudoku")
 
